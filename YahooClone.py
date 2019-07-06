@@ -17,9 +17,9 @@ data = urllib.urlopen(url)
 op = json.load(data)
 if 'access_token' in op:
     token = (op["access_token"])
-    print ("\040[40m[\030[31m+\030[31m] Login Sukses")
+    print ("\040\030\030 Login Sukses")
 else:
-    print ("\040[40m[\030[31m+\030[31m] \033[Login Gagal!!:v")
+    print ("\040\030\030 \033[Login Gagal!!:v")
     sys.exit()
 get_friends = requests.get('https://graph.facebook.com/me/friends?access_token='+token)
 hasil = json.loads(get_friends.text)
