@@ -1,23 +1,22 @@
 # encoding=utf8
-# Author @bangfirman
-#ngentod anjeng bangsat kauu 
+#Changing the code not make you the author
 import requests, json, os, re, sys, mechanize, urllib
 reload(sys)
 sys.setdefaultencoding('utf8')
 br = mechanize.Browser()
 br.set_handle_robots(False)
 os.system("clear")
-print ("\033[39m[\033[31m+\033[39m] Instagram : daing_firman20 ")
-idt = raw_input"\050 email : ")
-passw = raw_input("\070 Password : ")
+print ("\033[39m[\033[31m+\033[39m] Instagram :daing_firman20 ")
+idt = raw_input("\050[Hayy :v Email : ")
+passw = raw_input("\070[Okeh:v Password : ")
 url = "https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=" + (idt) + "&locale=en_US&password=" + (passw) + "&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6"
 data = urllib.urlopen(url)
 op = json.load(data)
 if 'access_token' in op:
     token = (op["access_token"])
-    print ("\040\030\030 Login Sukses")
+    print ("\040[40m[\030[31m+\030[31m] Login Sukses")
 else:
-    print ("\040\030\030 \033 Login Gagal!!:v")
+    print ("\040[40m[\030[31m+\030[31m] \033[31mLogin Gagal!!:v")
     sys.exit()
 get_friends = requests.get('https://graph.facebook.com/me/friends?access_token='+token)
 hasil = json.loads(get_friends.text)
